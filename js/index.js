@@ -9,8 +9,10 @@ const nextBtn = document.querySelector('.js-btn-next')
 const prevBtn = document.querySelector('.js-btn-prev')
 
 let index = 0;
+let interval;
 
 const updateSlide = () => {
+  reset()
   image.classList.add('fade-to-right');
   image.addEventListener('transitionend', () => {
     image.setAttribute('src', data[index].image)
@@ -36,3 +38,17 @@ prevBtn.addEventListener('click', () => {
   index = (index - 1 + data.length) % data.length
   updateSlide()
 })
+
+const playSlide = () => {
+  interval = setInterval(() => {
+    index = (index + 1) % data.length
+    updateSlide()
+  }, 6000)
+}
+
+function reset() {
+  clearInterval(interval)
+  playSlide()
+}
+
+playSlide()
