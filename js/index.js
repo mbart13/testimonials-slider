@@ -12,7 +12,6 @@ let index = 0;
 let interval;
 
 const updateSlide = () => {
-  reset()
   image.classList.add('fade-to-right');
   image.addEventListener('transitionend', () => {
     image.setAttribute('src', data[index].image)
@@ -27,16 +26,17 @@ const updateSlide = () => {
     quote.innerText = data[index].text
     testimonial.classList.remove('fade-to-left');
   })
+
 }
 
 nextBtn.addEventListener('click', () => {
   index = (index + 1) % data.length
-  updateSlide()
+  reset()
 })
 
 prevBtn.addEventListener('click', () => {
   index = (index - 1 + data.length) % data.length
-  updateSlide()
+  reset()
 })
 
 const playSlide = () => {
@@ -48,6 +48,7 @@ const playSlide = () => {
 
 function reset() {
   clearInterval(interval)
+  updateSlide()
   playSlide()
 }
 
