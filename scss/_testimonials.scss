@@ -1,0 +1,207 @@
+.main-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 0;
+
+  @include breakpoint-up(large) {
+    align-items: center;
+  }
+}
+
+.img-container {
+  background: url("../images/pattern-bg.svg") no-repeat center/contain;
+  padding: 2.5rem;
+  position: relative;
+  min-width: 20.63rem;
+  max-width: 30rem;
+
+  @include breakpoint-up(medium) {
+    padding: 3.5rem;
+  }
+
+  @include breakpoint-up(large) {
+    order: 2;
+    flex: 1 1 54%;
+    padding: 4.5rem;
+    max-width: unset;
+  }
+}
+
+.person-image {
+  border-radius: .3125rem;
+  object-fit: contain;
+  box-shadow: 0 2.5rem 3.125rem -1.8rem rgba(36, 36, 113, .5);
+  transition: $transition;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 75rem;
+  }
+}
+
+.btn-container {
+  background-color: #fff;
+  position: absolute;
+  transform: translate(-50%, 50%);
+  bottom: 2.5rem;
+  left: 50%;
+  border-radius: 5rem;
+  box-shadow: 0 .9375rem 1.25rem -.625rem rgba(36,36,113,.1);
+
+  @include breakpoint-up(medium) {
+    bottom: 3.5rem;
+  }
+
+  @include breakpoint-up(large) {
+    bottom: 4.5rem;
+    left: 30%;
+  }
+
+}
+
+.btn {
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 50%;
+  padding: .8rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #babacf;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: #babacf;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 1rem;
+  }
+
+}
+
+.icon {
+  object-fit: contain;
+  height: .8rem;
+  margin: 0 auto;
+
+  @include breakpoint-up(large) {
+    height: 1rem;
+  }
+
+}
+
+.testimonial-text {
+  margin-top: 3rem;
+  padding: 0 1rem;
+  text-align: center;
+  color: $dark-blue;
+  position: relative;
+  transition: $transition;
+
+  @include breakpoint-up(large) {
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    background: url('../images/pattern-quotes.svg') no-repeat;
+    position: absolute;
+    width: 3.75rem;
+    height: 3.75rem;
+    background-size: contain;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include breakpoint-up(large) {
+      width: 6.75rem;
+      height: 6.75rem;
+      left: 32%;
+
+    }
+
+  }
+
+  @include breakpoint-up(large) {
+    order: 1;
+    flex: 1 1 46%;
+    text-align: left;
+  }
+
+}
+
+.quote {
+  font-size: 1.125rem;
+  font-weight: 300;
+
+
+  @include breakpoint-up(small) {
+    font-size: 1.4rem;
+  }
+
+  @include breakpoint-up(medium) {
+    max-width: 25.93rem;
+  }
+
+  @include breakpoint-up(large) {
+    font-size: 2rem;
+    width: 130%;
+    max-width: unset;
+  }
+
+}
+
+.person-details {
+  font-size: 0.9375rem;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint-up(small) {
+    font-size: 1.1rem;
+  }
+
+  @include breakpoint-up(large) {
+    font-size: 1.25rem;
+    flex-direction: row;
+  }
+}
+
+.name {
+  font-weight: bold;
+
+  @include breakpoint-up(large) {
+    padding-right: 1rem;
+  }
+}
+
+.job {
+  color: $grayish-blue;
+}
+
+.attribution {
+  align-self: center;
+  padding: 1rem;
+  font-size: .7rem;
+  color: hsl(228, 45%, 44%);
+  text-align: center;
+}
+
+.fade-to-right {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-to-left {
+  opacity: 0;
+  transform: translateX(-100%);
+}
